@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Rejestracja</title>
+    <link rel="stylesheet" href="/assets/css/index/style.css" />
+    <!-- FontAwesome Icons -->
+    <script src="https://kit.fontawesome.com/4798a03daf.js" crossorigin="anonymous"></script>
+  </head>
+  <body>
+    <div class="form-wrapper">
+      <div class="form">
+        <h2 class="form-title">Rejestracja</h2>
+        <form action="" method="POST">
+            <div class="double-row">
+                <div class="col">
+                    <label for="name">Imię</label>
+                    <div class="input">
+                      <input
+                        type="text"
+                        name="name"
+                        id="name"
+                        placeholder="Podaj imię"
+                      />
+                    </div>
+                </div>
+                <div class="col">
+                    <label for="surname">Nazwisko</label>
+                    <div class="input">
+                      <input
+                        type="text"
+                        name="surname"
+                        id="surname"
+                        placeholder="Podaj Nazwisko"
+                      />
+                    </div>
+                </div>
+            </div>
+          <div class="form-row">
+            <label for="email">Email</label>
+            <div class="input">
+              <input
+                type="email"
+                name="email"
+                id="email"
+                placeholder="Podaj Email"
+              />
+            </div>
+          </div>
+          <div class="form-row">
+            <label for="password">Hasło</label>
+            <div class="input">
+              <input
+                type="password"
+                name="password"
+                id="password"
+                placeholder="Podaj Hasło"
+              />
+            </div>
+          </div>
+          <div class="form-row">
+            <label for="r_password">Powtórz hasło</label>
+            <div class="input">
+              <input
+                type="password"
+                name="password"
+                id="password"
+                placeholder="Powtórz hasło"
+              />
+            </div>
+          </div>
+          <div class="form-row">
+            <button type="submit">Zarejestruj się</button>
+          </div>
+        </form>
+        <p class="link_to">
+          Masz już konto?
+          <a href="/login.html" class="link">Zaloguj się!</a>
+        </p>
+      </div>
+      <div class="form-image">
+        <img src="/assets/images/a-book-2306181_1920.webp" alt="book" />
+      </div>
+    </div>
+    <script src="/assets/js/script.js"></script>
+  </body>
+</html>

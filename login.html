@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Logowanie</title>
+    <link rel="stylesheet" href="/assets/css/index/style.css" />
+    <!-- FontAwesome Icons -->
+    <script src="https://kit.fontawesome.com/4798a03daf.js" crossorigin="anonymous"></script>
+  </head>
+  <body>
+    <div class="form-wrapper">
+      <div class="form">
+        <h2 class="form-title">Logowanie</h2>
+        <form action="" method="POST">
+          <div class="form-row">
+            <label for="email">Email</label>
+            <div class="input">
+              <div class="icon-wrapper">
+                <i class="fa-solid fa-user"></i>
+              </div>
+              <input
+                type="email"
+                name="email"
+                id="email"
+                placeholder="Podaj Email"
+              />
+            </div>
+          </div>
+          <div class="form-row">
+            <label for="password">Hasło</label>
+            <div class="input">
+              <div class="icon-wrapper">
+                <i class="fa-solid fa-lock"></i>
+              </div>
+              <input
+                type="password"
+                name="password"
+                id="password"
+                placeholder="Podaj Hasło"
+              />
+            </div>
+          </div>
+          <div class="form-row remember_me">
+            <label for="remember_me">
+              <input type="checkbox" name="remember_me" id="remember_me" class="remember_me"/> Zapamiętaj mnie
+            </label>
+          </div>
+          <div class="form-row">
+            <button type="submit">Zaloguj</button>
+          </div>
+        </form>
+        <p class="link_to">
+          Nie masz jeszcze konta?
+          <a href="/register.html" class="link">Zarejestruj się!</a>
+        </p>
+      </div>
+      <div class="form-image">
+        <img src="/assets/images/a-book-2306181_1920.webp" alt="book" />
+      </div>
+    </div>
+    <script src="/assets/js/script.js"></script>
+  </body>
+</html>
