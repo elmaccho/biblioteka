@@ -18,6 +18,7 @@ main{
     height: 100%;
 
     padding: 50px;
+    height: 100vh;
 }
 
 /* SIDE MENU */
@@ -53,7 +54,7 @@ main{
     color: white;
     outline: none;
     border: none;
-    border-radius: 5px;
+    border-radius: 5px !important;
     height: 40px;
     font-weight: 400;
     transition: 0.3s;
@@ -124,6 +125,7 @@ main{
     flex-wrap: wrap;
     justify-content: space-between;
     gap: 40px;
+    height: 100%;
 
     overflow-y: scroll;
     padding-right: 10px;
@@ -154,10 +156,21 @@ main{
     gap: 10px;
     align-items: center;
 }
+.book-img img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
 .book-title{
     width: 100%;
     font-weight: 600;
     font-size: 20px;
+}
+.book-description{
+    width: 100%;
+}
+.reviews p{
+    font-size: 15px;
 }
 .book-body{
     display: flex;
@@ -165,10 +178,7 @@ main{
     justify-content: space-between;
     padding: 10px;
     flex-grow: 1;
-}
-
-.book-action{
-
+    width: 200px;
 }
 
 /* END MAIN */
@@ -177,5 +187,36 @@ main{
 @media screen and (max-width: 1478px) {
     .book-card{
         flex-grow: 1;
+    }
+}
+@media screen and (max-width: 800px) {
+    main{
+        flex-direction: column;
+        height: unset;
+        padding: 20px;
+    }
+    .nav-content{
+        flex-direction: column;
+        gap: 20px;
+    }
+    .main-content{
+        width: 100%;
+    }
+    .content{
+        overflow-y: unset;
+        padding-right: unset;
+    }
+}
+@media screen and (max-width: 460px){
+    .book-card{
+        flex-direction: column;
+        height: 350px;
+    }
+    .book-img{
+        width: 100%;
+        height: 150px;
+    }
+    .book-body{
+        width: 100%;
     }
 }
