@@ -1,5 +1,6 @@
 <?php
-// Połączenie z bazą danych
+session_start();
+
 $host = 'localhost';
 $dbname = 'biblioteka';
 $user = 'root';
@@ -43,7 +44,16 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
           $stmt->bind_param("ssssss", $name, $surname, $email, $hashedPassword, $data_zal, $status);
   
           if ($stmt->execute()) {
-              echo "Dodano użytkownika.";
+
+              $userId = $stmt->insert_id;
+
+              $_SESSION['user_id'] = $userId;
+              $_SESSION['email'] = $email;
+              $_SESSION['name'] = $name;
+              $_SESSION['surname'] = $surname;
+
+              header("Location: main.php");
+              exit;
           } else {
               echo "Błąd podczas rejestracji: " . $stmt->error;
           }
@@ -149,7 +159,7 @@ $conn->close();
         </form>
         <p class="link_to">
           Masz już konto?
-          <a href="login.html" class="link">Zaloguj się!</a>
+          <a href="login.php" class="link">Zaloguj się!</a>
         </p>
       </div>
       <div class="form-image">

@@ -1,3 +1,59 @@
+<?php
+session_start(); 
+
+if(isset($_SESSION['user_id'])){
+  header("Location: main.php");
+}
+
+$host = 'localhost';
+$dbname = 'biblioteka';
+$user = 'root';
+$pass = '';
+
+$conn = new mysqli($host, $user, $pass, $dbname);
+
+if ($conn->connect_error) {
+    die("Błąd połączenia: " . $conn->connect_error);
+}
+
+$error = "";
+
+if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+    $email = trim($_POST['email'] ?? '');
+    $password = trim($_POST['password'] ?? '');
+
+    if (!empty($email) && !empty($password)) {
+        $stmt = $conn->prepare("SELECT id, haslo, imie, nazwisko FROM uzytkownicy WHERE adres_email = ?");
+        $stmt->bind_param("s", $email);
+        $stmt->execute();
+        $result = $stmt->get_result();
+
+        if ($result->num_rows === 1) {
+            $user = $result->fetch_assoc();
+
+            if (password_verify($password, $user['haslo'])) {
+                $_SESSION['user_id'] = $user['id'];
+                $_SESSION['email'] = $email;
+                $_SESSION['name'] = $user['imie'];
+                $_SESSION['surname'] = $user['nazwisko'];
+
+                header('Location: main.php');
+            } else {
+                $error = "Nieprawidłowe hasło.";
+            }
+        } else {
+            $error = "Nie ma takiego maila.";
+        }
+
+        $stmt->close();
+    } else {
+        $error = "Wszystkie pola są wymagane.";
+    }
+}
+
+$conn->close();
+?>
+
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -12,7 +68,7 @@
     <div class="form-wrapper">
       <div class="form">
         <h2 class="form-title">Logowanie</h2>
-        <form action="" method="POST">
+        <form method="POST">
           <div class="form-row">
             <label for="email">Email</label>
             <div class="input">
@@ -53,6 +109,13 @@
             <button type="submit">Zaloguj</button>
           </div>
         </form>
+        <?php
+          if(isset($error)){
+            echo ' 
+              <p style="color:red; font-size:10px;">'.$error.'</p>
+            ';
+          }
+        ?>
         <p class="link_to">
           Nie masz jeszcze konta?
           <a href="register.php" class="link">Zarejestruj się!</a>
