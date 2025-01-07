@@ -4,9 +4,9 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Logowanie</title>
-    <link rel="stylesheet" href="assets/css/index/style.css" />
     <!-- FontAwesome Icons -->
     <script src="https://kit.fontawesome.com/4798a03daf.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="assets/css/index/style.css" />
   </head>
   <body>
     <div class="form-wrapper">
@@ -33,12 +33,15 @@
               <div class="icon-wrapper">
                 <i class="fa-solid fa-lock"></i>
               </div>
-              <input
-                type="password"
-                name="password"
-                id="password"
-                placeholder="Podaj Hasło"
-              />
+                <input
+                  type="password"
+                  name="password"
+                  id="password"
+                  placeholder="Podaj Hasło"
+                  class="passInput"
+                />
+                <i class="fa-solid fa-eye faeye showpass"></i>
+                <i class="fa-solid fa-eye-slash faeye hidepass"></i>
             </div>
           </div>
           <div class="form-row remember_me">
