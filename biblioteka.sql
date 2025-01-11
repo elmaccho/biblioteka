@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost
--- Generation Time: Sty 07, 2025 at 06:12 PM
+-- Generation Time: Sty 11, 2025 at 03:56 PM
 -- Wersja serwera: 8.0.30
 -- Wersja PHP: 8.3.6
 
@@ -192,31 +192,31 @@ CREATE TABLE `ksiazki` (
 --
 
 INSERT INTO `ksiazki` (`id`, `tytul`, `opis`, `id_autor`, `id_wspolautor`, `wydawnictwo`, `data_wydania`, `jezyk`, `dostepnosc`, `img_src`) VALUES
-(1, 'Pan Tadeusz', NULL, 101, NULL, 'Wydawnictwo Warszawskie', '1834-03-01', 'Polski', 1, NULL),
-(2, 'Lalka', NULL, 102, NULL, 'Wydawnictwo Literackie', '1899-12-01', 'Polski', 1, NULL),
-(3, 'Quo Vadis', NULL, 103, NULL, 'Wydawnictwo Zakład Narodowy im. Ossolińs', '1896-01-01', 'Polski', 1, NULL),
-(4, 'Prowadź swój pług przez kości umarłych', NULL, 106, NULL, 'Wydawnictwo Literackie', '2009-04-01', 'Polski', 1, NULL),
-(5, 'Solaris', 'Najsłynniejsza powieść Stanisława Lema w nowym wydaniu! Dzieło przetłumaczone na kilkadziesiąt języków i dwukrotnie przeniesione na ekran.\nW Solaris Stanisław Lem podejmuje jeden z najpopularniejszych tematów literatury fantastycznej - temat Kontaktu. Z obcą cywilizacją, odmienną formą życia, a może po prostu z Nieznanym, tego Lem jednoznacznie nie dopowiada. Być może dlatego Solaris po kilkudziesięciu lat od pierwszego wydania wciąż fascynuje.', 111, NULL, 'Wydawnictwo Faber & Faber', '1961-11-01', 'Polski', 1, NULL),
-(6, 'Kobzar', NULL, 116, NULL, 'Wydawnictwo Kultura', '1840-01-01', 'Ukraiński', 1, NULL),
+(1, 'Pan Tadeusz', NULL, 101, NULL, 'Wydawnictwo Warszawskie', '1834-03-01', 'Polski', 1, 'ksiazki/pan_tadeusz.jpg'),
+(2, 'Lalka', NULL, 102, NULL, 'Wydawnictwo Literackie', '1899-12-01', 'Polski', 1, 'ksiazki/lalka.jpg'),
+(3, 'Quo Vadis', NULL, 103, NULL, 'Wydawnictwo Zakład Narodowy im. Ossolińs', '1896-01-01', 'Polski', 0, 'ksiazki/quo-vadis.jpg'),
+(4, 'Prowadź swój pług przez kości umarłych', NULL, 106, NULL, 'Wydawnictwo Literackie', '2009-04-01', 'Polski', 1, 'ksiazki/prowadz_swoj_plug.jpg'),
+(5, 'Solaris', 'Najsłynniejsza powieść Stanisława Lema w nowym wydaniu! Dzieło przetłumaczone na kilkadziesiąt języków i dwukrotnie przeniesione na ekran.\nW Solaris Stanisław Lem podejmuje jeden z najpopularniejszych tematów literatury fantastycznej - temat Kontaktu. Z obcą cywilizacją, odmienną formą życia, a może po prostu z Nieznanym, tego Lem jednoznacznie nie dopowiada. Być może dlatego Solaris po kilkudziesięciu lat od pierwszego wydania wciąż fascynuje.', 111, NULL, 'Wydawnictwo Faber & Faber', '1961-11-01', 'Polski', 1, 'ksiazki/solaris.jpg'),
+(6, 'Kobzar', NULL, 116, NULL, 'Wydawnictwo Kultura', '1840-01-01', 'Ukraiński', 1, 'ksiazki/kobzar.jpg'),
 (7, 'Marta', NULL, 117, NULL, 'Wydawnictwo 7', '1896-01-01', 'Ukraiński', 1, NULL),
-(8, 'Kamenarz', NULL, 118, NULL, 'Wydawnictwo Kryształ', '1900-01-01', 'Ukraiński', 1, NULL),
+(8, 'Kamenarz', NULL, 118, NULL, 'Wydawnictwo Kryształ', '1900-01-01', 'Ukraiński', 0, NULL),
 (9, 'Fata Morgana', NULL, 119, NULL, 'Wydawnictwo Wyszehrad', '1902-01-01', 'Ukraiński', 1, NULL),
 (10, 'Czarny tynk', NULL, 120, NULL, 'Wydawnictwo Fakt', '1980-01-01', 'Ukraiński', 1, NULL),
 (11, 'Zniewolony umysł', NULL, 105, NULL, 'Wydawnictwo Znak', '1953-01-01', 'Polski', 1, NULL),
 (12, 'Wiedźmin', NULL, 109, NULL, 'Wydawnictwo SuperNOWA', '1992-04-01', 'Polski', 1, NULL),
-(13, 'Trylogia', NULL, 103, NULL, 'Wydawnictwo Prószyński i S-ka', '1900-01-01', 'Polski', 1, NULL),
+(13, 'Trylogia', NULL, 103, NULL, 'Wydawnictwo Prószyński i S-ka', '1900-01-01', 'Polski', 0, 'ksiazki/trylogia.jpeg'),
 (14, 'Cesarz', NULL, 120, NULL, 'Wydawnictwo Nowa Era', '1978-01-01', 'Polski', 1, NULL),
 (15, 'Perverzion', NULL, 122, NULL, 'Wydawnictwo Agora', '1996-05-01', 'Ukraiński', 1, NULL),
-(16, 'Muzyka ciała', NULL, 123, NULL, 'Wydawnictwo Wydawniczy', '1997-06-01', 'Ukraiński', 1, NULL),
+(16, 'Muzyka ciała', NULL, 123, NULL, 'Wydawnictwo Wydawniczy', '1997-06-01', 'Ukraiński', 0, NULL),
 (17, 'Pożegnanie z Marią', NULL, 112, NULL, 'Wydawnictwo Wydajnia', '1955-01-01', 'Polski', 1, NULL),
 (18, 'Wojna nie ma w sobie nic z kobiety', NULL, 121, NULL, 'Wydawnictwo Media', '2008-02-01', 'Ukraiński', 1, NULL),
-(19, 'Granica', NULL, 107, NULL, 'Wydawnictwo Zakład Narodowy', '1935-01-01', 'Polski', 1, NULL),
-(20, 'Wielki Gatsby', NULL, 95, NULL, 'Wydawnictwo Penguin', '1925-04-10', 'Angielski', 1, NULL),
-(21, '1984', NULL, 99, NULL, 'Wydawnictwo Secker & Warburg', '1949-06-08', 'Angielski', 1, NULL),
+(19, 'Granica', NULL, 107, NULL, 'Wydawnictwo Zakład Narodowy', '1935-01-01', 'Polski', 0, 'ksiazki/granica.jpg'),
+(20, 'Wielki Gatsby', NULL, 95, NULL, 'Wydawnictwo Penguin', '1925-04-10', 'Angielski', 0, NULL),
+(21, '1984', NULL, 99, NULL, 'Wydawnictwo Secker & Warburg', '1949-06-08', 'Angielski', 1, 'ksiazki/wielki_gatsby.jpg'),
 (22, 'Nowy wspaniały świat', NULL, 100, NULL, 'Wydawnictwo Chatto & Windus', '1932-08-31', 'Angielski', 1, NULL),
-(23, 'Wojna i pokój', NULL, 98, NULL, 'Wydawnictwo Małgorzata', '1869-01-01', 'Rosyjski', 1, NULL),
-(24, 'Anna Karenina', NULL, 98, NULL, 'Wydawnictwo Wydajnia', '1878-01-01', 'Rosyjski', 1, NULL),
-(25, 'Rok 1984', NULL, 99, NULL, 'Wydawnictwo Harvill Secker', '1949-06-08', 'Angielski', 1, NULL),
+(23, 'Wojna i pokój', NULL, 98, NULL, 'Wydawnictwo Małgorzata', '1869-01-01', 'Rosyjski', 1, 'ksiazki/wojna_i_pokoj.jpg'),
+(24, 'Anna Karenina', NULL, 98, NULL, 'Wydawnictwo Wydajnia', '1878-01-01', 'Rosyjski', 0, 'ksiazki/anna_karenina.jpg'),
+(25, 'Rok 1984', NULL, 99, NULL, 'Wydawnictwo Harvill Secker', '1949-06-08', 'Angielski', 0, 'ksiazki/rok_1984.jpg'),
 (26, 'Folwark zwierzęcy', NULL, 99, NULL, 'Wydawnictwo Secker & Warburg', '1945-08-17', 'Angielski', 1, NULL),
 (27, 'Wojna i pokój', NULL, 98, NULL, 'Wydawnictwo Nowa Era', '1869-01-01', 'Rosyjski', 1, NULL),
 (28, 'Ulisses', NULL, 97, NULL, 'Wydawnictwo Sylvia', '1922-02-02', 'Irlandzki', 1, NULL),
@@ -562,7 +562,8 @@ INSERT INTO `recenzje` (`id`, `id_ksiazka`, `id_uzytkownik`, `data_dodania`, `re
 (97, 150, 81, '2025-01-18', 'Bardzo mocna, ale trudna do przełknięcia.', 'negatywna'),
 (98, 149, 78, '2025-01-19', 'Piękna książka, która dotyka ważnych tematów społecznych.', 'pozytywna'),
 (99, 133, 69, '2025-01-19', 'Zdecydowanie nie moja bajka, nie potrafiłem się wciągnąć.', 'negatywna'),
-(100, 59, 49, '2025-01-20', 'Zdecydowanie najlepsza książka tego autora.', 'pozytywna');
+(100, 59, 49, '2025-01-20', 'Zdecydowanie najlepsza książka tego autora.', 'pozytywna'),
+(101, 1, 1, '2025-01-11', 'test XDDDDDDDDDD', 'negatywna');
 
 -- --------------------------------------------------------
 
@@ -583,7 +584,7 @@ CREATE TABLE `rezerwacje` (
 --
 
 INSERT INTO `rezerwacje` (`id`, `id_ksiazka`, `id_uzytkownik`, `data_wypozyczenia`, `data_wygasniecia`) VALUES
-(1, 23, 85, '2024-12-04', '2025-02-01'),
+(1, 23, 104, '2024-12-04', '2025-02-28'),
 (2, 12, 38, '2024-12-11', '2025-02-02'),
 (3, 45, 72, '2025-01-03', '2025-02-03'),
 (4, 78, 56, '2025-01-04', '2025-02-04'),
@@ -681,7 +682,6 @@ CREATE TABLE `uzytkownicy` (
 --
 
 INSERT INTO `uzytkownicy` (`id`, `imie`, `nazwisko`, `nr_tel`, `adres_email`, `haslo`, `data_zal`, `status`) VALUES
-(103, 'Damian', 'Cwelewski', NULL, 'XDDDDDD@gmail.com', '$2y$10$Kan6AqI5j5QOup1UjixRjuv2K3ID5CBcvLMyzK2FMiccG2Fj5WxhS', '2025-01-07', 'aktywny'),
 (104, 'Maciej', 'Chojnacki', NULL, 'maciek.chojnacki22@wp.pl', '$2y$10$IZJNSfKk746B4iwxZgB//u0nqLq4bqJY.uMyzDWrMQvhDy36CGRCS', '2025-01-07', 'aktywny');
 
 --
@@ -738,7 +738,7 @@ ALTER TABLE `ksiazki`
 -- AUTO_INCREMENT for table `recenzje`
 --
 ALTER TABLE `recenzje`
-  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=101;
+  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=102;
 
 --
 -- AUTO_INCREMENT for table `rezerwacje`
