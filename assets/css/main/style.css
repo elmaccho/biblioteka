@@ -1,4 +1,4 @@
-body{
+body {
     background: rgb(245, 245, 220);
     background: linear-gradient(90deg, rgba(245, 245, 220, 1) 41%, rgba(224, 211, 199, 1) 79%);
     font-family: Inter, sans-serif;
@@ -9,47 +9,47 @@ body{
     min-height: 100vh;
 }
 
-main{
+main {
     display: flex;
     justify-content: space-around;
     gap: 20px;
-    
     width: 100%;
     height: 100%;
-
     padding: 50px;
     height: 100vh;
 }
 
 /* SIDE MENU */
 
-.nav-content{
+.nav-content {
     background-color: white;
     padding: 25px;
     box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
     border-radius: 5px;
-
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-
 }
-.nav-title{
+
+.nav-title {
     display: flex;
     align-items: center;
     justify-content: center;
     gap: 10px;
 }
-.fa-book-open{
+
+.fa-book-open {
     font-size: 25px;
     color: #2E9D5F;
 }
-.nav-links{
+
+.nav-links {
     display: flex;
     flex-direction: column;
     gap: 20px;
 }
-.nav-link, .button-main{
+
+.nav-link, .button-main {
     background-color: #2E9D5F;
     color: white;
     outline: none;
@@ -59,60 +59,57 @@ main{
     font-weight: 400;
     transition: 0.3s;
     width: 100%;
-
     display: flex;
     justify-content: left;
     align-items: center;
     padding-left: 10px;
     gap: 10px;
 }
-.button-main{
+
+.button-main {
     justify-content: center;
 }
-.nav-link:hover, .button-main:hover{
+
+.nav-link:hover, .button-main:hover {
     color: white;
     box-shadow: rgba(50, 50, 93, 0.25) 0px 30px 60px -12px inset, rgba(0, 0, 0, 0.3) 0px 18px 36px -18px inset;
 }
-.nav-active{
+
+.nav-active {
     box-shadow: rgba(50, 50, 93, 0.25) 0px 30px 60px -12px inset, rgba(0, 0, 0, 0.3) 0px 18px 36px -18px inset;
 }
 
-
-
-/* style do accordion usera */
-.accordion-button:not(.collapsed){
+/* Accordion user styles */
+.accordion-button:not(.collapsed) {
     background-color: #aef9d6;
     border: none;
     outline: none;
     box-shadow: none;
     color: #232323;
 }
-.accordion-item{
+
+.accordion-item {
     background-color: #aef9d6;
 }
-.user-name{
+
+.user-name {
     max-width: 110px;
 }
 
-/* Ikonka przy accordion usera */
-.accordion-button:not(.collapsed)::after{
+.accordion-button:not(.collapsed)::after {
     background-image: var(--bs-accordion-btn-icon);
 }
 
-/* END SIDE MENU */
+/* MAIN CONTENT */
 
-
-/* MAIN */
-
-.main-content{
+.main-content {
     overflow: hidden;
     width: 70%;
-
     display: flex;
     flex-direction: column;
 }
 
-.title-wrapper{
+.title-wrapper {
     background-color: white;
     padding: 10px 20px;
     border-radius: 5px;
@@ -120,59 +117,58 @@ main{
     box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
 }
 
-.content{
+.content {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
     gap: 40px;
     height: 100%;
-
     overflow-y: scroll;
-    padding-right: 10px;
-    padding-bottom: 5px;
+    padding: 50px 15px 15px 0;
 }
 
-.book-card{
+.book-card {
     background-color: white;
     box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
     border-radius: 5px;
-
     height: 250px;
-
     width: 450px;
     overflow: hidden;
-
     display: flex;
 }
 
-.book-img{
+.book-img {
     background-color: #5FF5B4;
     height: 100%;
     width: 150px;
-
     display: flex;
     flex-direction: column;
     justify-content: center;
     gap: 10px;
     align-items: center;
 }
-.book-img img{
+
+.book-img img {
     width: 100%;
     height: 100%;
     object-fit: cover;
 }
-.book-title{
+
+.book-title {
     width: 100%;
     font-weight: 600;
     font-size: 20px;
 }
-.book-description{
+
+.book-description {
     width: 100%;
 }
-.reviews p{
+
+.reviews p {
     font-size: 15px;
 }
-.book-body{
+
+.book-body {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -181,42 +177,250 @@ main{
     width: 200px;
 }
 
-/* END MAIN */
+/* SETTINGS */
 
+.settings-content {
+    background-color: #fff;
+}
+
+.user-info {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between; 
+    align-items: center;
+}
+
+.photo-info {
+    display: flex;
+    flex-direction: row;
+    align-items: end;
+    gap: 17px;
+}
+
+.user-photo {
+    width: 100px;
+    height: 100px;
+    border-radius: 100%;
+    background-color:  #5ff5b4;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.change-photo-btn {
+    max-width: 73px;
+    max-height: 25px;
+    border: 1px solid #000;
+    border-radius: 6px;
+    box-shadow: 4px 4px 4px 0 rgba(0, 0, 0, 0.25);
+    background: #fff;
+}
+
+.user-welcome {
+    font-weight: 500;
+    font-size: 40px;
+    color: #000;
+}
+
+.user-settings {
+    margin-top: 60px;
+}
+
+.list-of-parameters {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 140px;
+    row-gap: 40px;
+}
+
+.form {
+    width: 500px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 140px;
+    row-gap: 50px;
+}
+
+.form-row {
+    width: calc((100% - 1 * 140px) / 2);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.form-row label {
+    width: 100%;
+}
+
+.form form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    width: 100%;
+    max-width: 350px;
+}
+
+.input {
+    border-radius: 5px;
+    border: 1px solid #d8d8d8;
+    background-color: #f8f8f8;
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+.input input {
+    background-color: transparent;
+    height: 35px;
+    width: 100%;
+    min-width: 140px;
+    border: none;
+    border-radius: 5px;
+    text-indent: 10px;
+}
+
+.input input:focus {
+    outline: none;
+}
+
+.icon-wrapper {
+    width: 40px;
+    border-right: 1px solid #d8d8d8;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #2e9d5f;
+}
+
+.form-title {
+    font-size: 35px;
+    font-weight: 500;
+}
+
+.button-section {
+    padding-top: 50px;
+    padding-bottom: 50px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.save-btn {
+    width: 250px;
+    height: 74px; 
+    box-shadow: 6px 6px 4px 0 rgba(0, 0, 0, 0.25);
+    border-radius: 6px;
+    background: #2e9d5f;
+    border: none;
+    font-weight: 400;
+    font-size: 28px;
+    color: #fff;
+}
+
+.sign-out {
+    width: 250px;
+    height: 74px;
+    border-radius: 6px;
+    box-shadow: 6px 6px 4px 0 rgba(0, 0, 0, 0.25);
+    background: rgba(95, 245, 231, 0.6);
+    border: none;
+    font-weight: 400;
+    font-size: 28px;
+    color: #000;
+}
+
+/* RESPONSIVE */
 
 @media screen and (max-width: 1478px) {
-    .book-card{
+    .book-card {
         flex-grow: 1;
     }
 }
-@media screen and (max-width: 800px) {
-    main{
+
+@media screen and (max-width: 1000px) {
+    main {
         flex-direction: column;
         height: unset;
         padding: 20px;
     }
-    .nav-content{
+
+    .nav-content {
         flex-direction: column;
         gap: 20px;
     }
-    .main-content{
+
+    .main-content {
         width: 100%;
     }
-    .content{
+
+    .content {
+        overflow-y: unset;
+    }
+
+    .settings-content {
+        padding: auto;
+    }
+
+    .user-info {
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .list-of-parameters {
+        justify-content: center;
+        gap: 40px;
+    }
+}
+
+@media screen and (max-width: 800px) {
+    main {
+        flex-direction: column;
+        height: unset;
+        padding: 20px;
+    }
+
+    .content {
         overflow-y: unset;
         padding-right: unset;
     }
 }
-@media screen and (max-width: 460px){
-    .book-card{
+
+@media screen and (max-width: 500px) {
+    .list-of-parameters {
+        flex-direction: column;
+    }
+
+    .form-row {
+        width: 100%;
+    }
+
+    .button-section {
+        flex-direction: column;
+        gap: 30px;
+    }
+}
+
+@media screen and (max-width: 460px) {
+    .book-card {
         flex-direction: column;
         height: 350px;
     }
-    .book-img{
+
+    .book-img {
         width: 100%;
         height: 150px;
     }
-    .book-body{
+
+    .book-body {
         width: 100%;
     }
 }

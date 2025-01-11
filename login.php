@@ -23,7 +23,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $password = trim($_POST['password'] ?? '');
 
     if (!empty($email) && !empty($password)) {
-        $stmt = $conn->prepare("SELECT id, haslo, imie, nazwisko FROM uzytkownicy WHERE adres_email = ?");
+        $stmt = $conn->prepare("SELECT id, haslo, imie, nazwisko, nr_tel FROM uzytkownicy WHERE adres_email = ?");
         $stmt->bind_param("s", $email);
         $stmt->execute();
         $result = $stmt->get_result();
@@ -36,6 +36,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                 $_SESSION['email'] = $email;
                 $_SESSION['name'] = $user['imie'];
                 $_SESSION['surname'] = $user['nazwisko'];
+                $_SESSION['nr_tel'] = $user['nr_tel'];
 
                 header('Location: main.php');
             } else {
@@ -62,7 +63,7 @@ $conn->close();
     <title>Logowanie</title>
     <!-- FontAwesome Icons -->
     <script src="https://kit.fontawesome.com/4798a03daf.js" crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="assets/css/index/style.css" />
+    <link rel="stylesheet" href="assets/css/login_register/style.css" />
   </head>
   <body>
     <div class="form-wrapper">

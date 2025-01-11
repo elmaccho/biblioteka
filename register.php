@@ -72,7 +72,7 @@ $conn->close();
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Rejestracja</title>
-    <link rel="stylesheet" href="assets/css/index/style.css" />
+    <link rel="stylesheet" href="assets/css/login_register/style.css" />
     <!-- FontAwesome Icons -->
     <script src="https://kit.fontawesome.com/4798a03daf.js" crossorigin="anonymous"></script>
   </head>
