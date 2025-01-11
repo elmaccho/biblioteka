@@ -337,6 +337,102 @@ main {
     color: #000;
 }
 
+/* BOOK DESCRIPTION */
+
+.book-desc-book {
+    background-color: white;
+    width: 100%;
+}
+
+.book-desc-desc {
+    background-color: white;
+    width: 100%;
+    gap: 10px;
+    display: flex;
+}
+
+.book-desc-title {
+    font-size: 45px;
+    padding: 40px;
+    padding-bottom: 0px;
+}
+
+.book-desc-authline {
+    display: flex;
+    justify-content: center;
+    gap: 60px;
+    width: 100%;
+    font-size: 25px;
+    padding-top: 25px;
+}
+
+.book-desc-photo {
+    height: 100%;
+    width: 450px;
+    padding: 40px;
+}
+
+.book-desc-photo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.book-desc-rating {
+    display: flex;
+    gap: 15px;
+}
+
+.book-desc-reserve {
+    font-size: 20px;
+    padding-left: 40px;
+    padding-top: 40px;
+}
+
+.book-desc-publisher {
+    padding-top: 25px;
+}
+
+.book-desc-releasedate {
+    padding-top: 25px;
+}
+
+.book-desc-language {
+    padding-top: 25px;
+}
+
+.book-desc-availability {
+    padding-top: 25px;
+    color: #2e9d5f;
+}
+
+.book-desc-reserve-button {
+    padding-top: 25px;
+    display: flex;
+    justify-content: center;
+}
+
+.button-reserve {
+    background-color: #2e9d5f;
+    color: white;
+    outline: none;
+    border: none;
+    border-radius: 5px !important;
+    height: 60px;
+    font-weight: 400;
+    transition: 0.3s;
+    width: 100%;
+    font-size: 25px;
+}
+
+.book-desc-desc-text {
+    padding-top: 15px;
+    padding-left: 40px;
+    width: 95%;
+}
+
+/* END BOOK DESCRIPTION  */
+
 /* RESPONSIVE */
 
 @media screen and (max-width: 1478px) {
