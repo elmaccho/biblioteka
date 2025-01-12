@@ -356,10 +356,18 @@ main {
     padding: 40px;
     padding-bottom: 0px;
 }
+.no-photo{
+    width: 100%;
+    height: 100%;
+    background-color: #5FF5B4;
 
-.book-desc-authline {
     display: flex;
     justify-content: center;
+    align-items: center;
+}
+.book-desc-authline {
+    display: flex;
+    justify-content: left;
     gap: 60px;
     width: 100%;
     font-size: 25px;
@@ -367,7 +375,6 @@ main {
 }
 
 .book-desc-photo {
-    height: 100%;
     width: 450px;
     padding: 40px;
 }
@@ -429,6 +436,66 @@ main {
     padding-top: 15px;
     padding-left: 40px;
     width: 95%;
+}
+
+a {
+    text-decoration: none;
+}
+
+.recenzje-wrapper{
+    padding: 0 40px;
+}
+
+.comment {
+    display: flex;
+    align-items: flex-start;
+    background-color: #fff;
+    border-radius: 8px;
+    padding: 10px;
+    margin-bottom: 15px;
+}
+
+.comment .img {
+    width: 65px;
+    height: 65px;
+    border-radius: 50%;
+    margin-right: 15px;
+    background-color: #2e9d5f;
+    color: white;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.comment-details {
+    flex: 1;
+}
+
+.comment-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 5px;
+}
+
+.comment-header .name {
+    font-weight: bold;
+    font-size: 1.1em;
+}
+
+.comment-header .date {
+    font-size: 0.9em;
+    color: #666;
+}
+.review{
+    color: #232323;
+    font-weight: 600;
+}
+
+.comment-content {
+    font-size: 1em;
+    color: #333;
 }
 
 /* END BOOK DESCRIPTION  */

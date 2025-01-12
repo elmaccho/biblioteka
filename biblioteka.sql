@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost
--- Generation Time: Sty 11, 2025 at 09:08 PM
+-- Generation Time: Sty 12, 2025 at 10:25 PM
 -- Wersja serwera: 8.0.30
 -- Wersja PHP: 8.3.6
 
@@ -463,14 +463,13 @@ CREATE TABLE `recenzje` (
 --
 
 INSERT INTO `recenzje` (`id`, `id_ksiazka`, `id_uzytkownik`, `data_dodania`, `recenzja`, `ocena`) VALUES
-(1, 150, 12, '2024-12-01', 'Wspaniała książka, pełna emocji i historycznych szczegółów.', 'pozytywna'),
-(2, 42, 34, '2024-12-02', 'Książka bardzo interesująca, ale zbyt długa w porównaniu do filmu.', 'pozytywna'),
-(3, 233, 56, '2024-12-02', 'Ciężko było się skupić, zbyt trudna w odbiorze.', 'negatywna'),
+(1, 150, 104, '2024-12-01', 'Wspaniała książka, pełna emocji i historycznych szczegółów.', 'pozytywna'),
+(3, 233, 104, '2024-12-02', 'Ciężko było się skupić, zbyt trudna w odbiorze.', 'negatywna'),
 (4, 123, 45, '2024-12-03', 'Niezwykłe dzieło, które zmienia spojrzenie na ludzką moralność.', 'pozytywna'),
 (5, 14, 23, '2024-12-03', 'Bardzo wciągająca, ale czasami zbyt przygnębiająca.', 'pozytywna'),
 (6, 67, 67, '2024-12-04', 'Fantastyczna opowieść, z głębokimi refleksjami na temat życia.', 'pozytywna'),
 (7, 88, 89, '2024-12-04', 'Ciekawa, choć niełatwa w odbiorze.', 'negatywna'),
-(8, 231, 44, '2024-12-05', 'Piękna opowieść o miłości i klasach społecznych.', 'pozytywna'),
+(8, 231, 104, '2024-12-05', 'Piękna opowieść o miłości i klasach społecznych.', 'pozytywna'),
 (9, 90, 15, '2024-12-06', 'Motywacja do działania, polecam każdemu!', 'pozytywna'),
 (10, 1, 99, '2024-12-06', 'Nie mogłem się oderwać, wspaniała opowieść o ludzkiej naturze.', 'pozytywna'),
 (11, 2, 82, '2024-12-07', 'Zdecydowanie za długi, trudny do przeczytania.', 'negatywna'),
@@ -563,7 +562,10 @@ INSERT INTO `recenzje` (`id`, `id_ksiazka`, `id_uzytkownik`, `data_dodania`, `re
 (98, 149, 78, '2025-01-19', 'Piękna książka, która dotyka ważnych tematów społecznych.', 'pozytywna'),
 (99, 133, 69, '2025-01-19', 'Zdecydowanie nie moja bajka, nie potrafiłem się wciągnąć.', 'negatywna'),
 (100, 59, 49, '2025-01-20', 'Zdecydowanie najlepsza książka tego autora.', 'pozytywna'),
-(101, 1, 1, '2025-01-11', 'test XDDDDDDDDDD', 'negatywna');
+(101, 1, 1, '2025-01-11', 'test XDDDDDDDDDD', 'negatywna'),
+(107, 1, 105, '2025-01-01', 'git ksiazka nie', 'pozytywna'),
+(108, 1, 105, '2025-01-11', 'zmieniam zdanie jednak', 'negatywna'),
+(109, 1, 104, '2025-01-12', 'bez kitu mi tez sie nie podoba', 'negatywna');
 
 -- --------------------------------------------------------
 
@@ -682,7 +684,8 @@ CREATE TABLE `uzytkownicy` (
 --
 
 INSERT INTO `uzytkownicy` (`id`, `imie`, `nazwisko`, `nr_tel`, `adres_email`, `haslo`, `data_zal`, `status`) VALUES
-(104, 'Maciej', 'Chojnacki', '111222334', 'maciek.chojnacki22@wp.pl', '$2y$10$GBRZ7wynEWWcZkG0X2uXr.3TgpM3wlmSNhwnZ0LBRQ9umBcZ/mL32', '2025-01-07', 'aktywny');
+(104, 'Maciej', 'Chojnacki', '111222334', 'maciek.chojnacki22@wp.pl', '$2y$10$GBRZ7wynEWWcZkG0X2uXr.3TgpM3wlmSNhwnZ0LBRQ9umBcZ/mL32', '2025-01-07', 'aktywny'),
+(105, 'Janusz', 'Kowalski', NULL, 'januszkowalski@gmail.com', '$2y$10$LcvntTB.iJaTOyPwARc/DukVE.JOcdzQOsEBMwf53TsSYfC5PuvjG', '2025-01-12', 'aktywny');
 
 --
 -- Indeksy dla zrzutów tabel
@@ -738,7 +741,7 @@ ALTER TABLE `ksiazki`
 -- AUTO_INCREMENT for table `recenzje`
 --
 ALTER TABLE `recenzje`
-  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=102;
+  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=110;
 
 --
 -- AUTO_INCREMENT for table `rezerwacje`
@@ -750,7 +753,7 @@ ALTER TABLE `rezerwacje`
 -- AUTO_INCREMENT for table `uzytkownicy`
 --
 ALTER TABLE `uzytkownicy`
-  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=105;
+  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=106;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

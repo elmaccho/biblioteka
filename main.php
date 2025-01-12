@@ -79,7 +79,8 @@ $result = $conn->query($query);
               $ilePozyt = $row['ile_poleca'];
               $ileNegat = $row['ile_nie_poleca'];
               echo "
-              <a href='book.php?id=$bookid' class='book-card'>
+              <a class='text-decoration-none text-dark' href='book.php?id=$bookid'>
+              <div class='book-card'>
                 <div class='book-img'>
                 ";
               if (is_null($imgSrc)) {
@@ -140,6 +141,7 @@ $result = $conn->query($query);
               echo '
                   </div>
                   </div>
+                </div>
                 </a>
               ';
             }
