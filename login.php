@@ -48,7 +48,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                 if($user['status'] == 'nieaktywny'){
                   $error = "Twoje konto jest nieaktywne. Skontaktuj się z administracją w celu aktywacji konta";
                 } else {
-                  // header('Location: main.php');
+                  header('Location: main.php');
                 }
 
             } else {

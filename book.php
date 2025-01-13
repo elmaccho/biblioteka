@@ -186,15 +186,23 @@ $isLoggedIn = isset($_SESSION['user_id']);
             echo  "$dostepne";
             echo '</div>
                                 <div class="book-desc-reserve-button">';
-            if ($dostepnosc == 1) {
-              echo "
-                                      <a href='bookreserv.php?id=$readid' class='btn btn-success w-100 btn-lg'>Zarezerwuj</a>
-                                    ";
-            } else {
-              echo '
-                                      <button class="btn btn-danger w-100 btn-lg">Książka niedostępna</button>
-                                    ';
+            if($isLoggedIn){
+              if ($dostepnosc == 1) {
+                echo  "
+                        <a href='bookreserv.php?id=$readid' class='btn btn-success w-100 btn-lg'>Zarezerwuj</a>
+                      ";
+              } else {
+                echo '
+                      <button class="btn btn-danger w-100 btn-lg">Książka niedostępna</button>
+                    ';
+              }
+                  } else {
+                    
+                    echo  "
+                            <a href='register.php' class='btn btn-warning w-100 btn-lg'>Wymagana rejestracja</a>
+                          ";
             }
+
 
             echo '</div>
                               </div>
