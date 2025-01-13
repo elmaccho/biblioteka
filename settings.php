@@ -44,6 +44,10 @@
     $newTel = $_POST['tel'];
     $newHaslo = $_POST['haslo'];
     $powthaslo = $_POST['powthaslo'];
+
+    $name = $newName;
+    $surname = $newNazwisko;
+
     echo "test";
     if (!empty($newHaslo) || !empty($powthaslo)) {
       if ($newHaslo == $powthaslo) {
@@ -87,7 +91,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Document</title>
+  <title>Ustawienia <?php echo $imie." ".$nazwisko?></title>
 
   <!-- BOOTSTRAP -->
   <link
