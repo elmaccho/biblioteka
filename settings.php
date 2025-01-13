@@ -21,7 +21,11 @@
     die("Błąd połączenia: " . $conn->connect_error);
   }
 
-  $result = $conn->query("SELECT imie, nazwisko, nr_tel, adres_email FROM uzytkownicy WHERE id = $userid");
+  $stmt = $conn->prepare("SELECT imie, nazwisko, nr_tel, adres_email FROM uzytkownicy WHERE id = ?");
+  $stmt->bind_param('i', $userid);
+  $stmt->execute();
+
+  $result = $stmt->get_result();
 
   if ($result->num_rows > 0) {
     $user = $result->fetch_assoc();
@@ -45,39 +49,45 @@
       if ($newHaslo == $powthaslo) {
         $hashedPassword = password_hash($newHaslo, PASSWORD_DEFAULT);
 
-        $updateQuery = "UPDATE uzytkownicy SET imie = '$newName', nazwisko = '$newNazwisko', nr_tel = '$newTel', haslo = '$hashedPassword' WHERE id = $userid";
-        
-        if ($conn->query($updateQuery)) {
+        $updateQuery = "UPDATE uzytkownicy SET imie = ?, nazwisko = ?, nr_tel = ?, haslo = ? WHERE id = ?";
+        $stmt = $conn->prepare($updateQuery);
+        $stmt->bind_param("ssssi", $newName, $newNazwisko, $newTel, $hashedPassword, $userid);
+
+        if ($stmt->execute()) {
           header('Location: settings.php');
           exit;
         } else {
             echo "Błąd podczas aktualizacji: " . $conn->error;
         }
+        $stmt->close();
       } else {
           $hasloError = "Hasła muszą być identyczne.";
         }
     } else {
-      $updateQuery = "UPDATE uzytkownicy SET imie = '$newName', nazwisko = '$newNazwisko', nr_tel = '$newTel' WHERE id = $userid";
-      
-      if ($conn->query($updateQuery)) {
+      $updateQuery = "UPDATE uzytkownicy SET imie = ?, nazwisko = ?, nr_tel = ? WHERE id = ?";
+      $stmt = $conn->prepare($updateQuery);
+      $stmt->bind_param("sssi", $newName, $newNazwisko, $newTel, $userid);
+
+      if ($stmt->execute()) {
         header('Location: settings.php');
         exit;
       } else {
           echo "Błąd podczas aktualizacji: " . $conn->error;
       }
+      $stmt->close();
     }
   }
 
+  $stmt->close();
   $conn->close();
 ?>
-
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Ustawienia konta <?php echo $name." ".$surname ?></title>
+  <title>Document</title>
 
   <!-- BOOTSTRAP -->
   <link
@@ -106,7 +116,7 @@
       <div class="content settings-content overflow-auto gap-1 p-5">
         <form method="POST">
           <div class="user-info w-100">
-            <p class="user-welcome">Witaj <?php echo $name ?>!</p>
+            <p class="user-welcome">Witaj <?php echo $imie ?>!</p>
           </div>
           <div class="user-settings">
             <ul class="list-of-parameters">
@@ -121,7 +131,7 @@
                     name="imie"
                     id="imie"
                     placeholder="Imię"
-                    value="<?php echo $name ?>" />
+                    value="<?php echo $imie ?>" />
                 </div>
               </li>
               <li class="form-row">
@@ -135,7 +145,7 @@
                     name="nazwisko"
                     id="nazwisko"
                     placeholder="Nazwisko"
-                    value="<?php echo $surname ?>" />
+                    value="<?php echo $nazwisko ?>" />
                 </div>
               </li>
               <li class="form-row">
@@ -181,7 +191,7 @@
                     placeholder="Hasło" />
                 </div>
                 <?php if($hasloError) echo "<p class='text-danger'>$hasloError</p>"; ?>
-                
+
               </li>
               <li class="form-row">
                 <label for="powt-haslo">Powtórz hasło</label>
@@ -211,5 +221,3 @@
         integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4"
         crossorigin="anonymous"></script>
 </body>
-
-</html>
