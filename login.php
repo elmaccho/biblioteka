@@ -23,7 +23,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $password = trim($_POST['password'] ?? '');
 
     if (!empty($email) && !empty($password)) {
-        $stmt = $conn->prepare("SELECT id, haslo, imie, nazwisko, nr_tel FROM uzytkownicy WHERE adres_email = ?");
+        $stmt = $conn->prepare("SELECT id, haslo, imie, nazwisko, nr_tel, status FROM uzytkownicy WHERE adres_email = ?");
         $stmt->bind_param("s", $email);
         $stmt->execute();
         $result = $stmt->get_result();
@@ -38,7 +38,12 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                 $_SESSION['surname'] = $user['nazwisko'];
                 $_SESSION['nr_tel'] = $user['nr_tel'];
 
-                header('Location: main.php');
+                if($user['status'] == 'nieaktywny'){
+                  $error = "Twoje konto jest nieaktywne. Skontaktuj się z administracją w celu aktywacji konta";
+                } else {
+                  // header('Location: main.php');
+                }
+
             } else {
                 $error = "Nieprawidłowe hasło.";
             }

@@ -23,6 +23,8 @@ $isLoggedIn = isset($_SESSION['user_id']);
     $readid = $_GET['id'];
   }
 
+  $tytul = "Książka";
+
   $query = "SELECT 
         ksiazki.id AS ksiazki_id,
         ksiazki.tytul AS ksiazki_tytul,
@@ -70,11 +72,6 @@ $isLoggedIn = isset($_SESSION['user_id']);
         echo "Błąd: " . $conn->error;
     }
 }
-
-
-
-
-
   $conn->close();
 ?>
 <!DOCTYPE html>
@@ -83,7 +80,7 @@ $isLoggedIn = isset($_SESSION['user_id']);
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Document</title>
+  <title>Atlas</title>
 
   <!-- BOOTSTRAP -->
   <link

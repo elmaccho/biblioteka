@@ -1,7 +1,7 @@
 <nav class="nav-content">
     <div class="nav-title">
         <i class="fa-solid fa-book-open"></i>
-        <h2 class="m-0">Biblioteka</h2>
+        <h2 class="m-0">Atlas</h2>
     </div>
     <div class="nav-links">
         <a href="main.php" class="nav-link">
