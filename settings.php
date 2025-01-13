@@ -21,11 +21,7 @@
     die("Błąd połączenia: " . $conn->connect_error);
   }
 
-  $stmt = $conn->prepare("SELECT imie, nazwisko, nr_tel, adres_email FROM uzytkownicy WHERE id = ?");
-  $stmt->bind_param('i', $userid);
-  $stmt->execute();
-
-  $result = $stmt->get_result();
+  $result = $conn->query("SELECT imie, nazwisko, nr_tel, adres_email FROM uzytkownicy WHERE id = $userid");
 
   if ($result->num_rows > 0) {
     $user = $result->fetch_assoc();
@@ -49,38 +45,32 @@
       if ($newHaslo == $powthaslo) {
         $hashedPassword = password_hash($newHaslo, PASSWORD_DEFAULT);
 
-        $updateQuery = "UPDATE uzytkownicy SET imie = ?, nazwisko = ?, nr_tel = ?, haslo = ? WHERE id = ?";
-        $stmt = $conn->prepare($updateQuery);
-        $stmt->bind_param("ssssi", $newName, $newNazwisko, $newTel, $hashedPassword, $userid);
-
-        if ($stmt->execute()) {
+        $updateQuery = "UPDATE uzytkownicy SET imie = '$newName', nazwisko = '$newNazwisko', nr_tel = '$newTel', haslo = '$hashedPassword' WHERE id = $userid";
+        
+        if ($conn->query($updateQuery)) {
           header('Location: settings.php');
           exit;
         } else {
             echo "Błąd podczas aktualizacji: " . $conn->error;
         }
-        $stmt->close();
       } else {
           $hasloError = "Hasła muszą być identyczne.";
         }
     } else {
-      $updateQuery = "UPDATE uzytkownicy SET imie = ?, nazwisko = ?, nr_tel = ? WHERE id = ?";
-      $stmt = $conn->prepare($updateQuery);
-      $stmt->bind_param("sssi", $newName, $newNazwisko, $newTel, $userid);
-
-      if ($stmt->execute()) {
+      $updateQuery = "UPDATE uzytkownicy SET imie = '$newName', nazwisko = '$newNazwisko', nr_tel = '$newTel' WHERE id = $userid";
+      
+      if ($conn->query($updateQuery)) {
         header('Location: settings.php');
         exit;
       } else {
           echo "Błąd podczas aktualizacji: " . $conn->error;
       }
-      $stmt->close();
     }
   }
 
-  $stmt->close();
   $conn->close();
 ?>
+
 <!DOCTYPE html>
 <html lang="en">
 
