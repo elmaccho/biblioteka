@@ -79,7 +79,7 @@ $result = $conn->query($query);
               $ilePozyt = $row['ile_poleca'];
               $ileNegat = $row['ile_nie_poleca'];
               echo "
-              <a class='text-decoration-none text-dark' href='book.php?id=$bookid'>
+              
               <div class='book-card'>
                 <div class='book-img'>
                 ";
@@ -92,7 +92,7 @@ $result = $conn->query($query);
                   </div>
                 <div class='book-body'>
                   <div class='book-title'>
-                    <p>$tytul</p>
+                    <a class='text-decoration-none text-dark' href='book.php?id=$bookid'>$tytul</a>
                   </div>
                   <div class='book-description'>
                     <p class='text-truncate'>";
@@ -123,13 +123,13 @@ $result = $conn->query($query);
 
               if ($isLoggedIn) {
                 if ($row['dostepnosc'] == 1) {
-                  echo '<button class="button-main">Zarezerwuj książkę</button>';
+                  echo "<a href='bookreserv.php?id=$bookid' class='button-main'>Zarezerwuj książkę</a>";
                 } else {
                   echo '              
-                      <a href="bookreserv.php" class="btn btn-danger w-100">
+                      <button class="btn btn-danger w-100">
                         Książka niedostępna
                         <i class="fa-solid fa-ban"></i>
-                      </a>';
+                      </button>';
                 }
               } else {
                 echo '              
@@ -142,7 +142,6 @@ $result = $conn->query($query);
                   </div>
                   </div>
                 </div>
-                </a>
               ';
             }
           }

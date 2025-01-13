@@ -187,9 +187,9 @@ $isLoggedIn = isset($_SESSION['user_id']);
             echo '</div>
                                 <div class="book-desc-reserve-button">';
             if ($dostepnosc == 1) {
-              echo '
-                                      <button class="btn btn-success w-100 btn-lg">Zarezerwuj</button>
-                                    ';
+              echo "
+                                      <a href='bookreserv.php?id=$readid' class='btn btn-success w-100 btn-lg'>Zarezerwuj</a>
+                                    ";
             } else {
               echo '
                                       <button class="btn btn-danger w-100 btn-lg">Książka niedostępna</button>
@@ -225,7 +225,7 @@ $isLoggedIn = isset($_SESSION['user_id']);
                     <option value="pozytywna" selected>Pozytywna</option>
                     <option value="negatywna">Negatywna</option>
                   </select>
-                  <button type="submit">Dodaj</button>
+                  <button class="btn btn-success" type="submit">Dodaj</button>
               </form>
               ';
             } else {

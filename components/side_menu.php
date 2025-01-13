@@ -10,7 +10,7 @@
         <?php
         if ($isLoggedIn) {
             echo '
-                            <a href="profile.php" class="nav-link nav-active">
+                            <a href="profile.php" class="nav-link">
                                 <i class="fa-regular fa-calendar-check"></i> Moje rezerwacje
                             </a>
                             <a href="hisreserv.php" class="nav-link">

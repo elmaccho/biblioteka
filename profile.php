@@ -23,7 +23,7 @@ if ($conn->connect_error) {
     die("Błąd połączenia: " . $conn->connect_error);
 }
 
-$query = "SELECT ksiazki.tytul, ksiazki.opis, ksiazki.img_src, rezerwacje.data_wygasniecia from ksiazki inner join rezerwacje on ksiazki.id = rezerwacje.id_ksiazka where id_uzytkownik = $userid and data_wygasniecia > CURRENT_DATE";
+$query = "SELECT ksiazki.id, ksiazki.tytul, ksiazki.opis, ksiazki.img_src, rezerwacje.data_wygasniecia, rezerwacje.data_wypozyczenia from ksiazki inner join rezerwacje on ksiazki.id = rezerwacje.id_ksiazka where id_uzytkownik = $userid and data_wygasniecia > CURRENT_DATE";
 
 $result = $conn->query($query);
 
@@ -62,52 +62,54 @@ $result = $conn->query($query);
                 <h2 class="m-0">Moje aktualne rezerwacje</h2>
             </div>
             <div class="content overflow-auto">
-                <?php
-                    if($result->num_rows>0){
-                        while ($row = $result->fetch_assoc()) {
-                            $tytul = $row['tytul'];
-                            $opis = $row['opis'];
-                            $imgSrc = $row['img_src'];
-                            echo '
-                            <div class="book-card">
-                              <div class="book-img">
-                              ';
-                            if (is_null($imgSrc)) {
-                              echo '<p style="font-size:10px;">Brak zdjęcia</p>';
-                            } else {
-                              echo '<img src="assets/images/' . $imgSrc . '" alt="" />';
-                            }
-                            echo "
-                                </div>
-                              <div class='book-body'>
-                                <div class='book-title'>
-                                  <p>$tytul</p>
+            <?php
+                if ($result->num_rows > 0) {
+                    while ($row = $result->fetch_assoc()) {
+                        $bookid = $row['id'];
+                        $tytul = $row['tytul'];
+                        $opis = $row['opis'];
+                        $imgSrc = $row['img_src'];
+                        $datawypo = $row['data_wypozyczenia'];
+                        $datawyga = $row['data_wygasniecia'];
+
+                        echo '
+                        <div class="book-card">
+                            <div class="book-img">';
+                        if (is_null($imgSrc)) {
+                            echo '<p style="font-size:10px;">Brak zdjęcia</p>';
+                        } else {
+                            echo '<img src="assets/images/' . $imgSrc . '" alt="Zdjęcie książki" />';
+                        }
+                        echo "
+                            </div>
+                            <div class='book-body'>
+                        <div class='book-title'>
+                                    <a class='text-decoration-none text-dark' href='book.php?id=$bookid'>$tytul</a>
                                 </div>
                                 <p>Data wypożyczenia: $datawypo</p>
                                 <p>Data wygaśnięcia: $datawyga</p>
                                 <div class='book-description'>
-                                  <p class='text-truncate'>";
-                
-                            if ($opis) {
-                              echo $opis;
-                            } else {
-                              echo '<p class="m-0" style="font-size:10px;">Brak opisu</p>';
-                            }
-                            echo "</p>
-                                </div>";
-                            echo "
-                            <div class='book-action'>
-                                <button class='btn btn-success w-100' type='button'>
-                                    Anuluj rezerwacje
-                                </button>
-                            </div>
-                            ";
-
+                                    <p class='text-truncate'>";
+                        if ($opis) {
+                            echo htmlspecialchars($opis);
+                        } else {
+                            echo '<span class="m-0" style="font-size:10px;">Brak opisu</span>';
                         }
-                    } else {
-                        echo "<p class='h5 mt-4'>Nie wypożyczyłeś jeszcze książki</p>";
+                        echo "</p>
+                                </div>
+                                <div class='book-action'>
+                                    <a href='cancelreserv.php?id=$bookid' class='btn btn-success w-100' type='button'>
+                                        Anuluj rezerwacje
+                                    </a>
+                                </div>
+                            </div>
+                        </div>";
                     }
+                } else {
+                    echo "<p class='h5 mt-4'>Nie wypożyczyłeś jeszcze książki</p>";
+                }
                 ?>
+
             </div>
         </div>
     </main>

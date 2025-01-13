@@ -23,7 +23,7 @@ if ($conn->connect_error) {
     die("Błąd połączenia: " . $conn->connect_error);
 }
 
-$query = "SELECT rezerwacje.id, ksiazki.tytul, ksiazki.opis, ksiazki.img_src, rezerwacje.data_wygasniecia, rezerwacje.data_wypozyczenia, rezerwacje.id_ksiazka, rezerwacje.id_uzytkownik from ksiazki inner join rezerwacje on ksiazki.id = rezerwacje.id_ksiazka where CURRENT_DATE >= rezerwacje.data_wygasniecia and id_uzytkownik = $userid;";
+$query = "SELECT ksiazki.id AS ksiazka_id, rezerwacje.id, ksiazki.tytul, ksiazki.opis, ksiazki.img_src, rezerwacje.data_wygasniecia, rezerwacje.data_wypozyczenia, rezerwacje.id_ksiazka, rezerwacje.id_uzytkownik from ksiazki inner join rezerwacje on ksiazki.id = rezerwacje.id_ksiazka where CURRENT_DATE >= rezerwacje.data_wygasniecia and id_uzytkownik = $userid;";
 
 $result = $conn->query($query);
 
@@ -65,6 +65,7 @@ $result = $conn->query($query);
                 <?php
                     if($result->num_rows>0){
                         while ($row = $result->fetch_assoc()) {
+                            $bookid = $row['ksiazka_id'];
                             $tytul = $row['tytul'];
                             $opis = $row['opis'];
                             $imgSrc = $row['img_src'];
@@ -100,9 +101,9 @@ $result = $conn->query($query);
                                 </div>";
                             echo "
                             <div class='book-action'>
-                                <button class='btn btn-success w-100' type='button'>
+                                <a href='bookreserv.php?id=$bookid' class='btn btn-success w-100' type='button'>
                                     Zarezerwuj ponownie
-                                </button>
+                                </a>
                             </div>
                             ";
 

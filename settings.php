@@ -113,15 +113,9 @@
       <div class="title-wrapper mb-3">
         <h2 class="m-0">Ustawienia użytkownika</h2>
       </div>
-      <div class="content settings-content overflow-auto gap-1">
+      <div class="content settings-content overflow-auto gap-1 p-5">
         <form method="POST">
           <div class="user-info w-100">
-            <div class="photo-info">
-              <div class="user-photo">
-                <i class="fa-solid fa-user fa-2x" style="color: #2e9d5f"></i>
-              </div>
-              <button class="change-photo-btn">Zmień</button>
-            </div>
             <p class="user-welcome">Witaj <?php echo $name ?>!</p>
           </div>
           <div class="user-settings">
