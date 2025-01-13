@@ -23,10 +23,18 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
     $errorEmail = "";
 
-    $stmt = $conn->prepare("SELECT id FROM uzytkownicy WHERE adres_email = ?");
-    $stmt->bind_param("s", $email);
-    $stmt->execute();
-    $stmt->store_result();
+      // Przygotowanie zapytania SQL do pobrania id użytkownika na podstawie adresu e-mail
+      $stmt = $conn->prepare("SELECT id FROM uzytkownicy WHERE adres_email = ?");
+
+      // Powiązanie zmiennej $email z parametrem w zapytaniu (typ 's' oznacza string)
+      $stmt->bind_param("s", $email);
+
+      // Wykonanie zapytania
+      $stmt->execute();
+
+      // Przechowywanie wyników zapytania w pamięci, aby móc je później przetwarzać
+      $stmt->store_result();
+
 
       if ($stmt->num_rows > 0) {
         $errorEmail = "Ten email już istnieje w bazie danych";
@@ -37,11 +45,16 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         } else {
           $hashedPassword = password_hash($password, PASSWORD_DEFAULT);
   
+          // Przygotowanie zapytania SQL do dodania nowego użytkownika do tabeli 'uzytkownicy'
+          // Wstawiamy wartości: imię, nazwisko, adres email, hasło, data rejestracji, status
           $stmt = $conn->prepare(
-              "INSERT INTO uzytkownicy (imie, nazwisko, adres_email, haslo, data_zal, status) 
-               VALUES (?, ?, ?, ?, ?, ?)"
+            "INSERT INTO uzytkownicy (imie, nazwisko, adres_email, haslo, data_zal, status) 
+            VALUES (?, ?, ?, ?, ?, ?)"
           );
+
+          // Powiązanie zmiennych z parametrami zapytania (typ 's' oznacza string dla wszystkich zmiennych)
           $stmt->bind_param("ssssss", $name, $surname, $email, $hashedPassword, $data_zal, $status);
+
   
           if ($stmt->execute()) {
 

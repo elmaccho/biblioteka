@@ -23,10 +23,17 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $password = trim($_POST['password'] ?? '');
 
     if (!empty($email) && !empty($password)) {
-        $stmt = $conn->prepare("SELECT id, haslo, imie, nazwisko, nr_tel, status FROM uzytkownicy WHERE adres_email = ?");
-        $stmt->bind_param("s", $email);
-        $stmt->execute();
-        $result = $stmt->get_result();
+          // Przygotowanie zapytania SQL do pobrania danych użytkownika na podstawie adresu e-mail
+          $stmt = $conn->prepare("SELECT id, haslo, imie, nazwisko, nr_tel, status FROM uzytkownicy WHERE adres_email = ?");
+
+          // Powiązanie zmiennej $email z parametrem w zapytaniu (typ 's' oznacza string)
+          $stmt->bind_param("s", $email);
+
+          // Wykonanie zapytania
+          $stmt->execute();
+
+          // Pobranie wyników zapytania
+          $result = $stmt->get_result();
 
         if ($result->num_rows === 1) {
             $user = $result->fetch_assoc();

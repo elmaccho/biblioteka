@@ -1,6 +1,7 @@
 <?php
 session_start();
 
+  // Sprawdzenie czy istnieje juz zalogowany uzytkownik
 $isLoggedIn = isset($_SESSION['user_id']);
   if ($isLoggedIn) {
     $userid = $_SESSION['user_id'];
@@ -19,6 +20,8 @@ $isLoggedIn = isset($_SESSION['user_id']);
   if ($conn->connect_error) {
     die("Błąd połączenia: " . $conn->connect_error);
   }
+
+  // Sprawdzenie czy w parametrze jest id ksiazki
   if (isset($_GET['id'])) {
     $readid = $_GET['id'];
   }

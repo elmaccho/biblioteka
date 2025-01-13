@@ -1,6 +1,7 @@
 <?php
 session_start();
 
+  // Sprawdzenie czy istnieje juz zalogowany uzytkownik
 $isLoggedIn = isset($_SESSION['user_id']);
 if ($isLoggedIn) {
   $name = $_SESSION['name'];

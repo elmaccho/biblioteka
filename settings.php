@@ -1,6 +1,7 @@
 <?php
   session_start();
 
+  // Sprawdzenie czy istnieje juz zalogowany uzytkownik
   $isLoggedIn = isset($_SESSION['user_id']);
   if ($isLoggedIn) {
     $userid = $_SESSION['user_id'];
@@ -53,16 +54,24 @@
       if ($newHaslo == $powthaslo) {
         $hashedPassword = password_hash($newHaslo, PASSWORD_DEFAULT);
 
+        // Definiowanie zapytania SQL do aktualizacji danych użytkownika w tabeli 'uzytkownicy'
+        // Zmieniane będą kolumny: imie, nazwisko, nr_tel, haslo dla użytkownika o podanym id
         $updateQuery = "UPDATE uzytkownicy SET imie = ?, nazwisko = ?, nr_tel = ?, haslo = ? WHERE id = ?";
+
+        // Przygotowanie zapytania, aby uniknąć problemów z SQL Injection
         $stmt = $conn->prepare($updateQuery);
+
+        // s - string (tekst) dla imienia, nazwiska, numeru telefonu i hasła
+        // i - integer (liczba całkowita) dla id użytkownika
         $stmt->bind_param("ssssi", $newName, $newNazwisko, $newTel, $hashedPassword, $userid);
 
         if ($stmt->execute()) {
-          header('Location: settings.php');
-          exit;
+            header('Location: settings.php');
+            exit;
         } else {
             echo "Błąd podczas aktualizacji: " . $conn->error;
         }
+
         $stmt->close();
       } else {
           $hasloError = "Hasła muszą być identyczne.";
