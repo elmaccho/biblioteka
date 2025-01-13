@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost
--- Generation Time: Sty 12, 2025 at 10:25 PM
+-- Generation Time: Sty 13, 2025 at 06:06 PM
 -- Wersja serwera: 8.0.30
 -- Wersja PHP: 8.3.6
 
@@ -463,109 +463,13 @@ CREATE TABLE `recenzje` (
 --
 
 INSERT INTO `recenzje` (`id`, `id_ksiazka`, `id_uzytkownik`, `data_dodania`, `recenzja`, `ocena`) VALUES
-(1, 150, 104, '2024-12-01', 'Wspaniała książka, pełna emocji i historycznych szczegółów.', 'pozytywna'),
-(3, 233, 104, '2024-12-02', 'Ciężko było się skupić, zbyt trudna w odbiorze.', 'negatywna'),
-(4, 123, 45, '2024-12-03', 'Niezwykłe dzieło, które zmienia spojrzenie na ludzką moralność.', 'pozytywna'),
-(5, 14, 23, '2024-12-03', 'Bardzo wciągająca, ale czasami zbyt przygnębiająca.', 'pozytywna'),
-(6, 67, 67, '2024-12-04', 'Fantastyczna opowieść, z głębokimi refleksjami na temat życia.', 'pozytywna'),
-(7, 88, 89, '2024-12-04', 'Ciekawa, choć niełatwa w odbiorze.', 'negatywna'),
-(8, 231, 104, '2024-12-05', 'Piękna opowieść o miłości i klasach społecznych.', 'pozytywna'),
-(9, 90, 15, '2024-12-06', 'Motywacja do działania, polecam każdemu!', 'pozytywna'),
-(10, 1, 99, '2024-12-06', 'Nie mogłem się oderwać, wspaniała opowieść o ludzkiej naturze.', 'pozytywna'),
-(11, 2, 82, '2024-12-07', 'Zdecydowanie za długi, trudny do przeczytania.', 'negatywna'),
-(12, 59, 39, '2024-12-07', 'Wspaniała książka, ponadczasowa.', 'pozytywna'),
-(13, 177, 11, '2024-12-08', 'Zaskakująco dobra, ale nie dorównuje filmowi.', 'pozytywna'),
-(14, 250, 91, '2024-12-08', 'Przepiękna historia, wzruszająca.', 'pozytywna'),
-(15, 180, 43, '2024-12-09', 'Zdecydowanie warta przeczytania, mądra książka.', 'pozytywna'),
-(16, 222, 25, '2024-12-09', 'Książka dla każdego, kto szuka głębszego sensu życia.', 'pozytywna'),
-(17, 200, 71, '2024-12-10', 'Świetnie napisana, ale bardzo smutna.', 'pozytywna'),
-(18, 111, 78, '2024-12-10', 'Długi opis, ale interesująca książka.', 'pozytywna'),
-(19, 45, 49, '2024-12-11', 'Bardzo trudna, ale jeśli się przebrnie przez początek, warto.', 'pozytywna'),
-(20, 86, 17, '2024-12-11', 'Mistrzowskie dzieło, które zasługuje na uwagę każdego czytelnika.', 'pozytywna'),
-(21, 7, 34, '2024-12-12', 'Nie przepadam za tym typem literatury, ale rozumiem jej wartość.', 'negatywna'),
-(22, 144, 93, '2024-12-12', 'Bardzo dobra książka, choć zbyt pesymistyczna.', 'pozytywna'),
-(23, 56, 20, '2024-12-13', 'Wciągająca, ale przewidywalna.', 'negatywna'),
-(24, 99, 50, '2024-12-13', 'Powieść niesamowicie wciągająca, nie mogłem się oderwać.', 'pozytywna'),
-(25, 138, 42, '2024-12-14', 'Zdecydowanie warta przeczytania.', 'pozytywna'),
-(26, 44, 81, '2024-12-14', 'Opowieść, która nie nudzi ani na chwilę.', 'pozytywna'),
-(27, 157, 55, '2024-12-15', 'Trochę przestarzała, ale wartościowa literacko.', 'pozytywna'),
-(28, 175, 100, '2024-12-15', 'Bardzo ciekawe, choć trochę zbyt fantastyczne.', 'pozytywna'),
-(29, 33, 68, '2024-12-16', 'Ciężko mi było dotrwać do końca.', 'negatywna'),
-(30, 11, 48, '2024-12-16', 'Wspaniałe dzieło literackie, którego nie można przegapić.', 'pozytywna'),
-(31, 126, 65, '2024-12-17', 'Opowieść, która porusza głębokie ludzkie emocje.', 'pozytywna'),
-(32, 174, 19, '2024-12-17', 'Dobrze napisana, ale zbyt przewidywalna.', 'negatywna'),
-(33, 91, 70, '2024-12-18', 'Zmusiła mnie do refleksji nad własnym życiem.', 'pozytywna'),
-(34, 131, 60, '2024-12-18', 'Książka, którą warto przeczytać przynajmniej raz.', 'pozytywna'),
-(35, 150, 76, '2024-12-19', 'Ciekawa, ale nie na długo zapadająca w pamięć.', 'negatywna'),
-(36, 79, 37, '2024-12-19', 'Bardzo mocna książka, której nie mogłem odłożyć.', 'pozytywna'),
-(37, 9, 58, '2024-12-20', 'Książka bardzo wciągająca, polecam ją każdemu.', 'pozytywna'),
-(38, 8, 40, '2024-12-20', 'Również bardzo dobra książka, choć momentami za trudna.', 'negatywna'),
-(39, 22, 21, '2024-12-21', 'Zdecydowanie jeden z najlepszych thrillerów, jakie czytałem.', 'pozytywna'),
-(40, 111, 81, '2024-12-21', 'Niezła książka, ale liczyłem na coś więcej.', 'negatywna'),
-(41, 77, 92, '2024-12-22', 'Sporo przemyśleń, które pozostaną ze mną na długo.', 'pozytywna'),
-(42, 193, 23, '2024-12-22', 'Zdecydowanie warto przeczytać, choć książka jest momentami zbyt emocjonalna.', 'pozytywna'),
-(43, 24, 54, '2024-12-23', 'Zdecydowanie za dużo wątków, momentami trudna w odbiorze.', 'negatywna'),
-(44, 112, 12, '2024-12-23', 'Bardzo dobrze napisana, zaskakująca.', 'pozytywna'),
-(45, 13, 26, '2024-12-24', 'Niestety nie spełniła moich oczekiwań, średnia książka.', 'negatywna'),
-(46, 105, 61, '2024-12-24', 'Piękna opowieść o rodzinie i tajemnicach, które łączą pokolenia.', 'pozytywna'),
-(47, 41, 70, '2024-12-25', 'Powieść, która chwyta za serce, świetna fabuła.', 'pozytywna'),
-(48, 103, 83, '2024-12-25', 'Bardzo trudna w odbiorze, ale daje do myślenia.', 'negatywna'),
-(49, 50, 93, '2024-12-26', 'Świetne zakończenie, ale początek trochę nużący.', 'pozytywna'),
-(50, 178, 36, '2024-12-26', 'Książka pełna inspirujących myśli, warto ją przeczytać.', 'pozytywna'),
-(51, 156, 68, '2024-12-27', 'Porusza bardzo ważne tematy, ale trochę zbyt wolno się rozkręca.', 'negatywna'),
-(52, 25, 51, '2024-12-27', 'Jedna z najlepszych książek, które czytałem w ostatnich latach.', 'pozytywna'),
-(53, 39, 44, '2024-12-28', 'Przeczytałem ją jednym tchem, zdecydowanie polecam.', 'pozytywna'),
-(54, 102, 62, '2024-12-28', 'Smutna, ale piękna, doskonała dla tych, którzy lubią literaturę głęboką.', 'pozytywna'),
-(55, 20, 15, '2024-12-29', 'Za dużo zbędnych wątków, nie trafiła do mnie.', 'negatywna'),
-(56, 124, 73, '2024-12-29', 'Wciągająca książka, której nie można odłożyć.', 'pozytywna'),
-(57, 8, 58, '2024-12-30', 'Zbyt przewidywalna, książka bez większego zaskoczenia.', 'negatywna'),
-(58, 105, 99, '2024-12-30', 'Piękna opowieść, pełna emocji.', 'pozytywna'),
-(59, 132, 87, '2024-12-31', 'Niezły wybór, ale można się trochę znudzić w połowie.', 'negatywna'),
-(60, 66, 90, '2024-12-31', 'Zdecydowanie warta przeczytania, lekka i przyjemna.', 'pozytywna'),
-(61, 15, 35, '2025-01-01', 'Piękna książka o przyjaźni i miłości.', 'pozytywna'),
-(62, 97, 31, '2025-01-01', 'Zbyt mało akcji, nie trafiła do mnie.', 'negatywna'),
-(63, 86, 43, '2025-01-02', 'Książka pełna magii i emocji, wspaniała przygoda.', 'pozytywna'),
-(64, 175, 51, '2025-01-02', 'Fascynująca, chociaż trochę za trudna do zrozumienia.', 'negatywna'),
-(65, 74, 48, '2025-01-03', 'Zdecydowanie najlepsza książka tej autorki.', 'pozytywna'),
-(66, 101, 72, '2025-01-03', 'Bardzo interesująca, ale wymaga dużej uwagi do detali.', 'pozytywna'),
-(67, 149, 91, '2025-01-04', 'Piękna historia, pełna wzruszeń.', 'pozytywna'),
-(68, 120, 25, '2025-01-04', 'Słaba, zbyt dużo powtórzeń.', 'negatywna'),
-(69, 28, 10, '2025-01-05', 'Pomimo drobnych wad, książka ma swój urok.', 'pozytywna'),
-(70, 48, 18, '2025-01-05', 'Nie mogłem się skupić na tej książce, nie pasuje do mojego gustu.', 'negatywna'),
-(71, 57, 50, '2025-01-06', 'Zdecydowanie polecam tę książkę każdemu, kto szuka czegoś innego.', 'pozytywna'),
-(72, 137, 74, '2025-01-06', 'Bardzo długa i męcząca, nie dla każdego.', 'negatywna'),
-(73, 155, 95, '2025-01-07', 'Absolutnie fenomenalna książka!', 'pozytywna'),
-(74, 9, 63, '2025-01-07', 'Dzięki tej książce zmieniłem swoje spojrzenie na życie.', 'pozytywna'),
-(75, 49, 32, '2025-01-08', 'Bardzo trudna, ale wartościowa książka.', 'pozytywna'),
-(76, 28, 70, '2025-01-08', 'Strona po stronie coraz lepsza, zaskakujące zakończenie!', 'pozytywna'),
-(77, 117, 47, '2025-01-09', 'Zdecydowanie za długie, można się pogubić w fabule.', 'negatywna'),
-(78, 35, 64, '2025-01-09', 'Świetna książka, wciągająca od początku do końca.', 'pozytywna'),
-(79, 111, 86, '2025-01-10', 'Jedna z najpiękniejszych książek, jakie przeczytałem.', 'pozytywna'),
-(80, 140, 67, '2025-01-10', 'Zdecydowanie za dużo przydługich opisów, ale ogólnie dobra książka.', 'pozytywna'),
-(81, 132, 55, '2025-01-10', 'Bardzo ciekawe podejście do tematu, zdecydowanie warto przeczytać.', 'pozytywna'),
-(82, 87, 45, '2025-01-11', 'Książka pełna zaskakujących zwrotów akcji, świetna!', 'pozytywna'),
-(83, 123, 38, '2025-01-11', 'Czuję się trochę rozczarowany, książka miała większy potencjał.', 'negatywna'),
-(84, 90, 76, '2025-01-12', 'Zdecydowanie polecam, wciągająca i pełna emocji.', 'pozytywna'),
-(85, 113, 89, '2025-01-12', 'Powieść, która potrafi zmusić do myślenia, wspaniała!', 'pozytywna'),
-(86, 136, 32, '2025-01-13', 'Zdecydowanie za ciężka, nie wciągnęła mnie.', 'negatywna'),
-(87, 45, 72, '2025-01-13', 'Rewelacyjna książka, która skłania do refleksji nad życiem.', 'pozytywna'),
-(88, 53, 66, '2025-01-14', 'Bardzo ciekawa, ale momentami trochę zbyt przygnębiająca.', 'pozytywna'),
-(89, 58, 20, '2025-01-14', 'Warto przeczytać, ale nie jestem zachwycony końcem.', 'negatywna'),
-(90, 127, 90, '2025-01-15', 'Niesamowita historia, pełna emocji i zaskakujących momentów.', 'pozytywna'),
-(91, 140, 56, '2025-01-15', 'Dobrze napisana, choć czasami za długa.', 'pozytywna'),
-(92, 102, 59, '2025-01-16', 'Pozycja godna uwagi, ale przewidywalna.', 'negatywna'),
-(93, 85, 67, '2025-01-16', 'Zdecydowanie warta przeczytania, pełna nieoczekiwanych zwrotów.', 'pozytywna'),
-(94, 75, 94, '2025-01-17', 'Powieść dla osób szukających czegoś głębszego i wymagającego.', 'pozytywna'),
-(95, 104, 66, '2025-01-17', 'Bardzo dobrze napisana, ale zbyt zawiła w niektórych momentach.', 'negatywna'),
-(96, 120, 50, '2025-01-18', 'Książka, która zostaje w pamięci na długo.', 'pozytywna'),
-(97, 150, 81, '2025-01-18', 'Bardzo mocna, ale trudna do przełknięcia.', 'negatywna'),
-(98, 149, 78, '2025-01-19', 'Piękna książka, która dotyka ważnych tematów społecznych.', 'pozytywna'),
-(99, 133, 69, '2025-01-19', 'Zdecydowanie nie moja bajka, nie potrafiłem się wciągnąć.', 'negatywna'),
-(100, 59, 49, '2025-01-20', 'Zdecydowanie najlepsza książka tego autora.', 'pozytywna'),
 (101, 1, 1, '2025-01-11', 'test XDDDDDDDDDD', 'negatywna'),
 (107, 1, 105, '2025-01-01', 'git ksiazka nie', 'pozytywna'),
 (108, 1, 105, '2025-01-11', 'zmieniam zdanie jednak', 'negatywna'),
-(109, 1, 104, '2025-01-12', 'bez kitu mi tez sie nie podoba', 'negatywna');
+(109, 1, 104, '2025-01-12', 'bez kitu mi tez sie nie podoba', 'negatywna'),
+(110, 2, 104, '2025-01-13', 'test', 'pozytywna'),
+(111, 3, 104, '2025-01-13', 'średnie', 'negatywna'),
+(112, 3, 104, '2025-01-13', 'test', 'pozytywna');
 
 -- --------------------------------------------------------
 
@@ -586,81 +490,11 @@ CREATE TABLE `rezerwacje` (
 --
 
 INSERT INTO `rezerwacje` (`id`, `id_ksiazka`, `id_uzytkownik`, `data_wypozyczenia`, `data_wygasniecia`) VALUES
-(1, 23, 104, '2024-12-04', '2025-01-10'),
-(2, 12, 38, '2024-12-11', '2025-02-02'),
-(3, 45, 72, '2025-01-03', '2025-02-03'),
-(4, 78, 56, '2025-01-04', '2025-02-04'),
-(5, 98, 67, '2025-01-04', '2025-02-05'),
-(6, 14, 92, '2025-01-04', '2025-02-06'),
-(7, 65, 34, '2025-01-04', '2025-02-07'),
-(8, 112, 29, '2025-01-05', '2025-02-08'),
-(9, 53, 19, '2025-01-07', '2025-02-09'),
-(10, 136, 66, '2025-01-07', '2025-02-10'),
-(11, 87, 83, '2025-01-08', '2025-02-11'),
-(12, 150, 91, '2025-01-08', '2025-02-12'),
-(13, 107, 58, '2025-01-07', '2025-02-13'),
-(14, 44, 77, '2025-01-07', '2025-02-14'),
-(15, 65, 71, '2025-01-07', '2025-02-15'),
-(16, 19, 42, '2025-01-07', '2025-02-16'),
-(17, 123, 61, '2025-01-07', '2025-02-17'),
-(18, 110, 36, '2025-01-07', '2025-02-18'),
-(19, 85, 40, '2025-01-07', '2025-02-19'),
-(20, 48, 99, '2025-01-07', '2025-02-20'),
-(21, 15, 60, '2025-01-08', '2025-02-21'),
-(22, 79, 76, '2025-01-08', '2025-02-22'),
-(23, 123, 68, '2025-01-08', '2025-02-23'),
-(24, 41, 55, '2025-01-08', '2025-02-24'),
-(25, 104, 49, '2025-01-08', '2025-02-25'),
-(26, 9, 33, '2025-01-08', '2025-02-26'),
-(27, 56, 74, '2025-01-08', '2025-02-27'),
-(28, 98, 53, '2025-01-08', '2025-02-28'),
-(29, 116, 50, '2025-01-08', '0000-00-00'),
-(30, 67, 63, '2025-01-08', '0000-00-00'),
-(31, 132, 92, '2025-01-09', '0000-00-00'),
-(32, 21, 12, '2025-01-09', '2025-03-01'),
-(33, 119, 77, '2025-01-09', '2025-03-02'),
-(34, 54, 37, '2025-01-09', '2025-03-03'),
-(35, 90, 78, '2025-01-09', '2025-03-04'),
-(36, 71, 62, '2025-01-09', '2025-03-05'),
-(37, 118, 40, '2025-01-09', '2025-03-06'),
-(38, 115, 33, '2025-01-09', '2025-03-07'),
-(39, 102, 55, '2025-01-09', '2025-03-08'),
-(40, 83, 90, '2025-01-09', '0000-00-00'),
-(41, 129, 60, '2025-02-10', '2025-03-10'),
-(42, 68, 46, '2025-02-11', '2025-03-11'),
-(43, 116, 31, '2025-02-12', '2025-03-12'),
-(44, 108, 99, '2025-02-13', '2025-03-13'),
-(45, 34, 21, '2025-02-14', '2025-03-14'),
-(46, 87, 18, '2025-02-15', '2025-03-15'),
-(47, 119, 68, '2025-02-16', '2025-03-16'),
-(48, 54, 57, '2025-02-17', '2025-03-17'),
-(49, 25, 94, '2025-02-18', '2025-03-18'),
-(50, 109, 39, '2025-02-19', '2025-03-19'),
-(51, 141, 53, '2025-02-20', '2025-03-20'),
-(52, 12, 81, '2025-02-21', '2025-03-21'),
-(53, 130, 42, '2025-02-22', '2025-03-22'),
-(54, 102, 64, '2025-02-23', '2025-03-23'),
-(55, 76, 88, '2025-02-24', '2025-03-24'),
-(56, 124, 29, '2025-02-25', '2025-03-25'),
-(57, 94, 87, '2025-02-26', '2025-03-26'),
-(58, 60, 56, '2025-02-27', '2025-03-27'),
-(59, 44, 18, '2025-02-28', '2025-03-28'),
-(60, 78, 71, '2025-03-01', '2025-04-01'),
-(61, 130, 95, '2025-03-02', '2025-04-02'),
-(62, 142, 66, '2025-03-03', '2025-04-03'),
-(63, 55, 71, '2025-03-04', '2025-04-04'),
-(64, 119, 82, '2025-03-05', '2025-04-05'),
-(65, 132, 95, '2025-03-06', '2025-04-06'),
-(66, 51, 53, '2025-03-07', '2025-04-07'),
-(67, 108, 84, '2025-03-08', '2025-04-08'),
-(68, 75, 58, '2025-03-09', '2025-04-09'),
-(69, 66, 97, '2025-03-10', '2025-04-10'),
-(70, 119, 90, '2025-03-11', '2025-04-11'),
-(71, 92, 46, '2025-03-12', '2025-04-12'),
-(72, 85, 33, '2025-03-13', '2025-04-13'),
-(73, 50, 61, '2025-03-14', '2025-04-14'),
-(74, 121, 64, '2025-03-15', '2025-04-15'),
-(75, 106, 85, '2025-03-16', '2025-04-16');
+(88, 6, 104, '2025-01-13', '2025-02-13'),
+(89, 10, 104, '2025-01-13', '2025-02-13'),
+(90, 9, 104, '2025-01-13', '2025-02-13'),
+(91, 6, 105, '2025-01-13', '2025-02-13'),
+(92, 95, 104, '2025-01-13', '2025-02-13');
 
 -- --------------------------------------------------------
 
@@ -684,7 +518,7 @@ CREATE TABLE `uzytkownicy` (
 --
 
 INSERT INTO `uzytkownicy` (`id`, `imie`, `nazwisko`, `nr_tel`, `adres_email`, `haslo`, `data_zal`, `status`) VALUES
-(104, 'Maciej', 'Chojnacki', '111222334', 'maciek.chojnacki22@wp.pl', '$2y$10$GBRZ7wynEWWcZkG0X2uXr.3TgpM3wlmSNhwnZ0LBRQ9umBcZ/mL32', '2025-01-07', 'aktywny'),
+(104, 'Maciej', 'Chojnacki', '123456789', 'maciek.chojnacki22@wp.pl', '$2y$10$GBRZ7wynEWWcZkG0X2uXr.3TgpM3wlmSNhwnZ0LBRQ9umBcZ/mL32', '2025-01-07', 'aktywny'),
 (105, 'Janusz', 'Kowalski', NULL, 'januszkowalski@gmail.com', '$2y$10$LcvntTB.iJaTOyPwARc/DukVE.JOcdzQOsEBMwf53TsSYfC5PuvjG', '2025-01-12', 'aktywny');
 
 --
@@ -741,13 +575,13 @@ ALTER TABLE `ksiazki`
 -- AUTO_INCREMENT for table `recenzje`
 --
 ALTER TABLE `recenzje`
-  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=110;
+  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=113;
 
 --
 -- AUTO_INCREMENT for table `rezerwacje`
 --
 ALTER TABLE `rezerwacje`
-  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=76;
+  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=93;
 
 --
 -- AUTO_INCREMENT for table `uzytkownicy`

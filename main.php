@@ -126,10 +126,10 @@ $result = $conn->query($query);
                   echo '<button class="button-main">Zarezerwuj książkę</button>';
                 } else {
                   echo '              
-                      <button class="btn btn-danger w-100" type="button">
+                      <a href="bookreserv.php" class="btn btn-danger w-100">
                         Książka niedostępna
                         <i class="fa-solid fa-ban"></i>
-                      </button>';
+                      </a>';
                 }
               } else {
                 echo '              
