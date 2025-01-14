@@ -28,17 +28,23 @@
     }
 
     $query = "DELETE FROM rezerwacje WHERE id_ksiazka = $readid AND id_uzytkownik = $userid";
-        // echo $query;
 
-        $result = $conn->query($query);
+    $result = $conn->query($query);
 
-        if($result){
+    if ($result) {
+        // Zmiana dostępności książki na 1
+        $updateQuery = "UPDATE ksiazki SET dostepnosc = 1 WHERE id = $readid";
+        if ($conn->query($updateQuery)) {
             header("Refresh: 1; url=" . $_SERVER['HTTP_REFERER']);
         } else {
-            echo "Błąd podczas anulowania rezerwacji: " . $conn->error;
+            echo "Błąd podczas aktualizacji dostępności: " . $conn->error;
         }
+    } else {
+        echo "Błąd podczas anulowania rezerwacji: " . $conn->error;
+    }
 
 ?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>

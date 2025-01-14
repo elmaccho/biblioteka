@@ -1,7 +1,7 @@
 <?php
 session_start();
 
-  // Sprawdzenie czy istnieje juz zalogowany uzytkownik
+// Sprawdzenie czy istnieje juz zalogowany uzytkownik
 $isLoggedIn = isset($_SESSION['user_id']);
 if ($isLoggedIn) {
     $userid = $_SESSION['user_id'];
@@ -39,10 +39,17 @@ $checkResult = $conn->query($checkQuery);
 if ($checkResult && $checkResult->num_rows > 0) {
     $row = $checkResult->fetch_assoc();
     if ($row['dostepnosc'] == 1) {
+        // Dodanie rezerwacji
         $query = "INSERT INTO rezerwacje (id_ksiazka, id_uzytkownik, data_wypozyczenia, data_wygasniecia) VALUES ($readid, $userid, '$today', '$enddate')";
         
         if ($conn->query($query)) {
-            $info = "Rezerwowanie";
+            // Zmiana dostępności książki na 0
+            $updateQuery = "UPDATE ksiazki SET dostepnosc = 0 WHERE id = $readid";
+            if ($conn->query($updateQuery)) {
+                $info = "Rezerwacja zakończona sukcesem.";
+            } else {
+                $info = "Rezerwacja zakończona, ale nie udało się zaktualizować dostępności: " . $conn->error;
+            }
 
             header("Refresh: 1; url=" . $_SERVER['HTTP_REFERER']);
         } else {
@@ -50,7 +57,7 @@ if ($checkResult && $checkResult->num_rows > 0) {
         }
     } else {
         $info = "Książka nie jest dostępna do rezerwacji.";
-        header("Refresh: 1; url= main.php");
+        header("Refresh: 1; url=main.php");
     }
 } else {
     $info = "Nie znaleziono książki o podanym ID.";
@@ -59,6 +66,7 @@ if ($checkResult && $checkResult->num_rows > 0) {
 
 $conn->close();
 ?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
