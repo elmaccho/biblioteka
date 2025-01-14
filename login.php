@@ -38,22 +38,26 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         if ($result->num_rows === 1) {
             $user = $result->fetch_assoc();
 
-            if (password_verify($password, $user['haslo'])) {
+            if($user['status'] == 'nieaktywny'){
+              $error = "Twoje konto jest nieaktywne. Skontaktuj się z administracją w celu aktywacji konta";
+            } else {
+
+              if (password_verify($password, $user['haslo'])) {
                 $_SESSION['user_id'] = $user['id'];
                 $_SESSION['email'] = $email;
                 $_SESSION['name'] = $user['imie'];
                 $_SESSION['surname'] = $user['nazwisko'];
                 $_SESSION['nr_tel'] = $user['nr_tel'];
 
-                if($user['status'] == 'nieaktywny'){
-                  $error = "Twoje konto jest nieaktywne. Skontaktuj się z administracją w celu aktywacji konta";
-                } else {
-                  header('Location: main.php');
-                }
+
+                header('Location: main.php');
 
             } else {
                 $error = "Nieprawidłowe hasło.";
             }
+            }
+
+
         } else {
             $error = "Nie ma takiego maila.";
         }
@@ -125,7 +129,7 @@ $conn->close();
         <?php
           if(isset($error)){
             echo ' 
-              <p style="color:red; font-size:10px;">'.$error.'</p>
+              <p style="color:red; font-size:12px;">'.$error.'</p>
             ';
           }
         ?>
