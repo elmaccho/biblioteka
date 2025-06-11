@@ -1,0 +1,24 @@
+version: "3.8"
+
+services:
+  web:
+    build: .
+    container_name: library_php_web_pipeline
+    ports:
+      - "2115:80"
+    volumes:
+      - .:/var/www/html
+    depends_on:
+      - biblioteka_db
+
+  biblioteka_db:
+    image: mysql:latest
+    container_name: library_data_base_pipeline
+    environment:
+      MYSQL_DATABASE: biblioteka
+      MYSQL_ALLOW_EMPTY_PASSWORD: 'yes'
+    volumes:
+      - db_data:/var/lib/mysql
+
+volumes:
+  db_data:
