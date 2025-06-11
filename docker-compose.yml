@@ -5,7 +5,7 @@ services:
     build: .
     container_name: library_php_web_pipeline
     ports:
-      - "2115:80"
+      - "80:80"
     volumes:
       - .:/var/www/html
     depends_on:

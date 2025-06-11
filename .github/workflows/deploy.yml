@@ -17,7 +17,7 @@ jobs:
           username: ${{ secrets.SSH_USER }}
           key: ${{ secrets.SSH_KEY }}
           script: |
-            cd /srv/docker/biblioteka-atlas-php
+            cd /srv/docker/biblioteka
             git pull origin main
             echo "[DEPLOY] Restarting Docker containers"
             docker-compose down
