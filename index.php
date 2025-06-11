@@ -9,16 +9,7 @@ if ($isLoggedIn) {
   $email = $_SESSION['email'];
 }
 
-$host = 'localhost';
-$username = 'root';
-$password = '';
-$dbname = 'biblioteka';
-
-$conn = new mysqli($host, $username, $password, $dbname);
-
-if ($conn->connect_error) {
-  die("Błąd połączenia: " . $conn->connect_error);
-}
+  require_once("db_connection.php");
 
 $query = "SELECT 
           ksiazki.id,

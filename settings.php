@@ -11,16 +11,7 @@
     header("Location: login.php");
   }
 
-  $host = 'localhost';
-  $username = 'root';
-  $password = '';
-  $dbname = 'biblioteka';
-
-  $conn = new mysqli($host, $username, $password, $dbname);
-
-  if ($conn->connect_error) {
-    die("Błąd połączenia: " . $conn->connect_error);
-  }
+  require_once("db_connection.php");
 
   $stmt = $conn->prepare("SELECT imie, nazwisko, nr_tel, adres_email FROM uzytkownicy WHERE id = ?");
   $stmt->bind_param('i', $userid);

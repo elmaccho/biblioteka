@@ -10,16 +10,7 @@ if ($isLoggedIn) {
     $email = $_SESSION['email'];
 }
 
-$host = 'localhost';
-$username = 'root';
-$password = '';
-$dbname = 'biblioteka';
-
-$conn = new mysqli($host, $username, $password, $dbname);
-
-if ($conn->connect_error) {
-    die("Błąd połączenia: " . $conn->connect_error);
-}
+  require_once("db_connection.php");
 
 if (isset($_GET['id']) && is_numeric($_GET['id'])) {
     $readid = (int) $_GET['id'];

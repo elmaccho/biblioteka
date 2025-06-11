@@ -1,16 +1,7 @@
 <?php
 session_start();
 
-$host = 'localhost';
-$dbname = 'biblioteka';
-$user = 'root';
-$pass = '';
-
-$conn = new mysqli($host, $user, $pass, $dbname);
-
-if ($conn->connect_error) {
-    die("Błąd połączenia: " . $conn->connect_error);
-}
+  require_once("db_connection.php");
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $email = trim($_POST['email']);

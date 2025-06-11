@@ -13,16 +13,7 @@ if ($isLoggedIn) {
     header("Location: login.php");
 }
 
-$host = 'localhost';
-$username = 'root';
-$password = '';
-$dbname = 'biblioteka';
-
-$conn = new mysqli($host, $username, $password, $dbname);
-
-if ($conn->connect_error) {
-    die("Błąd połączenia: " . $conn->connect_error);
-}
+  require_once("db_connection.php");
 
 $query = "SELECT ksiazki.id AS ksiazka_id, rezerwacje.id, ksiazki.tytul, ksiazki.opis, ksiazki.img_src, rezerwacje.data_wygasniecia, rezerwacje.data_wypozyczenia, rezerwacje.id_ksiazka, rezerwacje.id_uzytkownik from ksiazki inner join rezerwacje on ksiazki.id = rezerwacje.id_ksiazka where CURRENT_DATE >= rezerwacje.data_wygasniecia and id_uzytkownik = $userid;";
 
