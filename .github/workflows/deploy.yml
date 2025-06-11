@@ -18,6 +18,7 @@ jobs:
           key: ${{ secrets.SSH_KEY }}
           script: |
             cd /srv/docker/biblioteka
+            git config --global --add safe.directory /srv/docker/biblioteka
             git pull origin main
             echo "[DEPLOY] Restarting Docker containers"
             docker-compose down
