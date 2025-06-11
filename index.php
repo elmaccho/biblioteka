@@ -57,7 +57,7 @@ $result = $conn->query($query);
     ?>
     <div class="main-content">
       <div class="title-wrapper mb-3">
-        <h2 class="m-0">Dostępne książki</h2>
+        <h2 class="m-0">Dostępne książki test</h2>
       </div>
       <div class="content">
 
